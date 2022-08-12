@@ -7,4 +7,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'simplecrm';
+  success_msg=true;
+
+  contacts = [
+  {
+    'firstname':'santhiya',
+    'lastname':'murugesan',
+    'contactid':'1234'
+  },
+  {
+    'firstname':'sangeetha',
+    'lastname':'kandavel',
+    'contactid':'12345'
+  },
+  {
+    'firstname':'santhosh',
+    'lastname':'kumar',
+    'contactid':'123456'
+  }
+  ]
+  
 }

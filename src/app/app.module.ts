@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddContactsComponent } from './add-contacts/add-contacts.component';
+import { AddLeadsComponent } from './add-leads/add-leads.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddContactsComponent,
+    AddLeadsComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
