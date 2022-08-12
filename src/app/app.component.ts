@@ -27,4 +27,7 @@ export class AppComponent {
   }
   ]
   
+  toggle(){
+    this.success_msg=!this.success_msg;
+  }
 }

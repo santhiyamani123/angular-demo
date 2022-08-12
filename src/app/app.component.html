@@ -1,12 +1,14 @@
 <h1>{{title}}</h1>
 
-<div *ngIf="success_msg; then updated_msg; else error_msg" style="background-color: pink;">
+<div *ngIf="success_msg; then updated_msg; else error_msg" [ngStyle]="{'color':success_msg?'blue':'red'}">
  
 </div>
 
+<button (click)="toggle()">toggle</button>
+
 <ng-template #updated_msg>user was updated</ng-template>
 
-<ng-template #error_msg>user was not added</ng-template>
+<ng-template #error_msg >user was not added</ng-template>
 
 <h2>Learning ngFor</h2>
 
