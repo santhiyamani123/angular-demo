@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AddContactsComponent } from './add-contacts/add-contacts.component';
 import { AddLeadsComponent } from './add-leads/add-leads.component';
 import { HighlightDirective } from './highlight.directive';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddContactsComponent,
     AddLeadsComponent,
-    HighlightDirective
+    HighlightDirective,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

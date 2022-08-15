@@ -1,4 +1,11 @@
-<h1>{{title}}</h1>
+<style>
+  table, th, td {
+    border:1px solid black;
+  }
+  </style>
+  
+  
+  <h1>{{title}}</h1>
 
 <div *ngIf="success_msg; then updated_msg; else error_msg" [ngStyle]="{'color':success_msg?'blue':'red'}">
  
@@ -55,6 +62,165 @@
 
 
 </ul>
+
+
+<hr><hr>
+
+
+<h3>Learning Ng Style</h3>
+
+<div [ngStyle]="{'background-color': 'green','color':'#fff'}">
+  This Is Green Div
+</div>
+
+<br>
+
+<div [ngStyle]="{'background-color': styleprop, 'color':stylecolor}">
+ This Is Dynamic Values via variable
+</div>
+
+<br>
+
+<div [ngStyle]="{'color': txtColor ==='blue'?'blue':'red'}">
+ This Is Conditional Operator
+</div>
+
+
+<hr><hr>
+
+
+<h3>Learning Ng Class</h3>
+
+<div [ngClass]="'c1'">
+ This IsNg Class String Example
+</div>
+
+<br>
+
+<div [ngClass]="'c1 c2'">
+  This IsNg Class using for Multiple class Example
+ </div>
+
+ <br>
+
+ <div [ngClass]="styleclsprop">
+  This Is Dynamic Values 
+ </div>
+
+ <br>
+
+ <div [ngClass]="conditionalclsprop === 'c4' ? 'c4':'c5'">
+    This Is Dynamic with conditional operators
+ </div>
+
+ <br>
+
+ <div [ngClass]="{c4: true,c5: true}">
+  This Is ngclass using for objects
+</div>
+
+<br>
+
+<div [ngClass]="getClsName()">
+  This Is Ngclass using Component Method
+</div>
+
+<hr><hr>
+
+<h1>Data Binding</h1>
+
+<hr>
+
+<h1>Interpolation</h1>
+
+<p>{{pageHeading}}</p>
+<p>{{pageCount}}</p>
+<p>{{userObject.firstname}} - {{userObject.lastname}}</p>
+
+<h1>Ngif - Data Binding</h1>
+
+<div *ngIf="isUserLoggedIn">
+  <div>
+    {{userObject.firstname}} - {{userObject.lastname}}
+  </div>
+
+</div>
+
+<h1>NgFor - Data Binding</h1>
+<table>
+  <tr>
+    <th>Contact Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    
+  </tr>
+
+  <tr *ngFor="let contact of contacts">
+    <td>{{contact.contactid}}</td>
+    <td>{{contact.firstname}}</td>
+    <td>{{contact.lastname}}</td>
+  </tr>
+
+</table>
+
+<h1>Property Binding</h1>
+<div *ngIf="isUserLoggedIn">
+  <div [innerHTML]="userObject.firstname">
+
+  </div>
+</div>
+
+<h1>Property Binding - Title</h1>
+<table>
+  <tr>
+    <th>Contact Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    
+  </tr>
+
+  <tr *ngFor="let contact of contacts">
+    <td [title]="contact.contactid">{{contact.contactid}}</td>
+    <td [title]="contact.firstname">{{contact.firstname}}</td>
+    <td [title]="contact.lastname">{{contact.lastname}}</td>
+  </tr>
+
+</table>
+
+<h1>Property Binding - Image</h1>
+
+<img [src]="imgUrl" alt="imgAlt">
+
+<h1>Style Binding</h1>
+
+<p [style.color]="txtColorVal">The Page Count Is : {{pageCount}}</p>
+
+<h1>Attribute Binding</h1>
+
+<table>
+  <tr>
+    <td>Contact Id</td>
+    <td>Contact Name</td>
+    <td>contact Email</td>
+  </tr>
+  <tr>
+    <td [attr.colspan]="colVal">Contact Id</td>
+    <td>contact Email</td>
+  </tr>
+</table>
+
+<h1>Event Binding</h1>
+
+<button (click)="sayHello()">CLICK</button>
+
+<div (mouseover)="highlightBGcolor()">HighLight Please Me</div>
+
+<input type="text" (focus)="inputBox()">
+
+<br>
+
+<button (click)="myfunction()">Event Binding</button>
+
 
 
 <router-outlet></router-outlet>
