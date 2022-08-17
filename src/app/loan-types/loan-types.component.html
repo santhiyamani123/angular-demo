@@ -1,0 +1,29 @@
+<p>loan-types works!</p>
+
+
+
+<form [formGroup]="addLoanTypesForm">
+
+    <div class="form-group">
+    <label>LOAN TYPE :</label>
+    <input type="text" formControlName="loanType">
+</div>
+     
+<div class="form-group">
+     <label>LOAN NAME :</label>
+    <input type="text" formControlName="loanName">
+    <div class="text-danger" *ngIf="addLoanTypesForm.get('loanName')?.hasError('required') && addLoanTypesForm.get('loanName')?.touched">Loan Name Is Required</div>
+    <div class="text-danger" *ngIf="addLoanTypesForm.get('loanName')?.hasError('minlength') && addLoanTypesForm.get('loanName')?.touched">Loan Name Should Be Minimum 10 Charaters</div>
+    <div class="text-danger" *ngIf="addLoanTypesForm.get('loanName')?.hasError('maxlength') && addLoanTypesForm.get('loanName')?.touched">Loan Name Should Be Minimum 20 Charaters</div>
+</div>
+    
+    <div class="form-group">
+    <label>LOAN DESCRIPTION :</label>
+    <textarea formControlName="loanDescription"></textarea>
+</div>
+    
+
+    <button (click)="addLoanType()" [disabled]="!addLoanTypesForm.valid">Add Loan Type</button>
+    <button (click)="resetForm()">Reset Form</button>
+
+</form>
