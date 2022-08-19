@@ -4,3 +4,47 @@
 
 <a href="#" (click)="updateValue()">Update Something</a>
  
+<ul>
+  <li *ngFor="let contact of contacts; index as i; first as f; last as l">
+
+    <div *ngIf="f" style="background-color: lightgreen;">This Is First Record</div>
+    <div>
+      {{i}}
+    {{contact.firstname}}
+    ({{contact.lastname}}) - 
+    {{contact.contactid}}
+  </div>
+
+  <div *ngIf="l" style="background-color: lightseagreen;">This Is Last Record</div>
+
+  </li>
+
+
+</ul>
+
+<p>New Table With Even And Odd</p>
+<ul>
+  <li *ngFor="let contact of contacts; index as i; even as e; odd as o">
+
+    <div *ngIf="e" style="background-color: orange;">This Is Even Record - 
+      
+    {{i}} -   
+    {{contact.firstname}}
+    ({{contact.lastname}}) - 
+    {{contact.contactid}}
+  </div>
+
+  <div *ngIf="o" style="background-color: orchid;">
+    This Is Odd Record - 
+    {{i}} - 
+    {{contact.firstname}}
+    ({{contact.lastname}}) - 
+    {{contact.contactid}}
+  
+  </div>
+
+  </li>
+
+
+</ul>
+
