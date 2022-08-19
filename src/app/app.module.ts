@@ -9,6 +9,8 @@ import { HighlightDirective } from './highlight.directive';
 import { UsersComponent } from './users/users.component';
 import { LoanTypesComponent } from './loan-types/loan-types.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppFooterComponent } from './app-footer/app-footer.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HighlightDirective,
     UsersComponent,
     LoanTypesComponent,
+    AppFooterComponent,
+    AppHeaderComponent,
   ],
   imports: [
     ReactiveFormsModule,
